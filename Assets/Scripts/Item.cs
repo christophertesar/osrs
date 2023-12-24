@@ -13,11 +13,23 @@ public class Item : MonoBehaviour{
 
     public Sprite icon;
 
+    public InventoryManager inventory;
+
     void Start(){
 
     }
 
     void Update(){
 
+    }
+
+    void Awake(){
+        inventory = GameObject.FindObjectsOfType<InventoryManager>(true)[0];
+        Debug.Log(inventory);
+    }
+
+    public void AddToInventory(){
+        Debug.Log(inventory.GetComponent<InventoryManager>());
+        inventory.Add(gameObject);
     }
 }
