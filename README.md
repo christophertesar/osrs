@@ -7,7 +7,7 @@ Features
 Immersive World: Experience Gielinor in 3D, with detailed environments and iconic landmarks.
 
 Installation
-Clone the repository: git clone https://github.com/your-username/osrs-vr-game.git
+Clone the repository: git clone https://github.com/christophertesar/osrs.git
 
 Usage
 Launch the game on your VR headset and start exploring the virtual world of Old School RuneScape. Use the provided controls for navigation.
