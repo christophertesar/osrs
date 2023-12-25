@@ -13,7 +13,7 @@ public class InventoryManager : MonoBehaviour
     private IDictionary<string, int> itemLookup = new Dictionary<string, int>();
 
     // Offset off the ground when item spawns from inventory.
-    private Vector3 itemSpawnOffset = new Vector3(0,1,0);
+    private Vector3 itemSpawnOffset = new Vector3(0,0.1f,0);
 
     private int itemCount;
     void Start()
@@ -57,16 +57,13 @@ public class InventoryManager : MonoBehaviour
             itemSlots[i] = null;
             if(Physics.Raycast(transform.position, Vector3.down, out hit, 200.0f)){
                 objectSlots[i].transform.position = hit.point + itemSpawnOffset;
-                Debug.Log("down");
             }
             else if(Physics.Raycast(transform.position, Vector3.up, out hit, 200.0f)) {
                 objectSlots[i].transform.position = hit.point + itemSpawnOffset;
-                Debug.Log("up");
             }
             else{
                 //TODO: This is buggy because raycast up does not work on terrain so we just spawn items way higher if the menu is below ground.
                  objectSlots[i].transform.position = transform.position + itemSpawnOffset * 3;
-                 Debug.Log("other");
             }
             
             objectSlots[i].SetActive(true);
